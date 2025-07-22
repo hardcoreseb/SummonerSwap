@@ -1,24 +1,53 @@
-﻿using System.Text;
+﻿using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using SummonerSwap.Services;
+using SummonerSwap.Models;
 
 namespace SummonerSwap
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private ProfileManager _profileManager;
+
         public MainWindow()
         {
             InitializeComponent();
+            _profileManager = new ProfileManager();
+            RefreshProfileList();
+        }
+
+        private void SaveProfile_Click(object sender, RoutedEventArgs e)
+        {
+            var name = ProfileNameTextBox.Text.Trim();
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Please enter a valid profile name.");
+                return;
+            }
+
+            _profileManager.SaveProfile(name);
+            RefreshProfileList();
+        }
+
+        private void LoadProfile_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfileListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Select a profile to load.");
+                return;
+            }
+
+            string profile = ProfileListBox.SelectedItem.ToString();
+            _profileManager.LoadProfile(profile);
+        }
+
+        private void RefreshProfileList()
+        {
+            ProfileListBox.Items.Clear();
+            foreach (var profile in _profileManager.ListProfiles())
+            {
+                ProfileListBox.Items.Add(profile);
+            }
         }
     }
 }
