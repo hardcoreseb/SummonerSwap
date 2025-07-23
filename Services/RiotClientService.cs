@@ -17,6 +17,15 @@ namespace SummonerSwap.Services
             }
         }
 
+        public static void KillLeagueClient()
+        {
+            foreach (var proc in Process.GetProcessesByName("LeagueClient"))
+            {
+                proc.Kill();
+                proc.WaitForExit();
+            }
+        }
+
         public static void LaunchClient()
         {
             if (File.Exists(RiotClientExe))
@@ -26,6 +35,19 @@ namespace SummonerSwap.Services
             else
             {
                 MessageBox.Show("Riot Client not found at expected path.");
+            }
+        }
+
+        public static bool CheckLeagueClientRunning()
+        {
+            var processes = Process.GetProcessesByName("LeagueClient");
+            if (processes.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }

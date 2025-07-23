@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SummonerSwap"
         mc:Ignorable="d"
-        Title="SummonerSwap" Height="350" Width="400">
+        Title="SummonerSwap" Height="600" Width="900">
     <Grid>
-        <TextBox x:Name="ProfileNameTextBox" Margin="83,10,83,224" />
-        <Button Content="Save Current Session" Click="SaveProfile_Click" Margin="10,289,236,10"/>
-        <ListBox x:Name="ProfileListBox" Margin="10,115,10,97"/>
-        <Button Content="Load Selected Profile" Click="LoadProfile_Click" Margin="233,289,10,10"/>
+        <TextBox x:Name="ProfileNameTextBox" Margin="150,10,150,544" Text="lol" />
+        <Button Content="Save Current Session" Click="SaveProfile_Click" Margin="10,504,710,10"/>
+        <ListBox x:Name="ProfileListBox" Margin="60,125,60,211"/>
+        <Button Content="Load Selected Profile" Click="LoadProfile_Click" Margin="734,504,10,10"/>
+        <CheckBox x:Name="MultipleClientCheckBox" Content="Multiple Clients" HorizontalAlignment="Left" Margin="734,484,0,0" VerticalAlignment="Top"/>
+        <Button Content="Delete Profile" Click="DeleteProfile_Click" HorizontalAlignment="Center" Margin="0,504,0,0" VerticalAlignment="Top" Height="70" Width="212"/>
     </Grid>
 </Window>

@@ -2,6 +2,7 @@
 using System.Windows;
 using SummonerSwap.Services;
 using SummonerSwap.Models;
+using System.Windows.Controls;
 
 namespace SummonerSwap
 {
@@ -37,8 +38,26 @@ namespace SummonerSwap
                 return;
             }
 
+            if(MultipleClientCheckBox.IsChecked == false)
+            {
+                RiotClientService.KillLeagueClient();
+            }
+
+
             string profile = ProfileListBox.SelectedItem.ToString();
             _profileManager.LoadProfile(profile);
+        }
+
+        public void DeleteProfile_Click(object sender, RoutedEventArgs e)
+        {
+            if (ProfileListBox.SelectedItem == null)
+            {
+                MessageBox.Show("Select a profile to delete.");
+                return;
+            }
+
+            _profileManager.DeleteProfile(ProfileListBox.SelectedItem.ToString());
+            RefreshProfileList();
         }
 
         private void RefreshProfileList()
