@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using SummonerSwap.Helpers;
 using SummonerSwap.Services;
+using SummonerSwap.Views;
 
 namespace SummonerSwap.Models
 {

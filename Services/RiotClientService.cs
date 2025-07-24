@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using SummonerSwap.Views;
 
 namespace SummonerSwap.Services
 {
@@ -34,6 +35,8 @@ namespace SummonerSwap.Services
             }
             else
             {
+                var messageBox = new CustomMessageBox("Riot Client not found at expected path.");
+                messageBox.ShowDialog();
                 MessageBox.Show("Riot Client not found at expected path.");
             }
         }

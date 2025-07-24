@@ -3,6 +3,8 @@ using System.Windows;
 using SummonerSwap.Services;
 using SummonerSwap.Models;
 using System.Windows.Controls;
+using SummonerSwap.Views;
+using System.Windows.Input;
 
 namespace SummonerSwap
 {
@@ -22,7 +24,8 @@ namespace SummonerSwap
             var name = ProfileNameTextBox.Text.Trim();
             if (string.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Please enter a valid profile name.");
+                var messageBox = new CustomMessageBox("Please enter a valid profile name.");
+                messageBox.ShowDialog();
                 return;
             }
 
@@ -67,6 +70,24 @@ namespace SummonerSwap
             {
                 ProfileListBox.Items.Add(profile);
             }
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
