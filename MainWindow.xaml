@@ -91,9 +91,9 @@
                            Margin="0,50,0,475">
                     <Run Text="Summoner"/><Run Text="Swap" Foreground="#d1363a" FontStyle="Italic"/>
                 </TextBlock>
-                <TextBox x:Name="ProfileNameTextBox" 
-                         Margin="350,175,350,350" 
-                         Style="{StaticResource ModernTextBox}" />
+                <TextBox Margin="350,175,350,350" 
+                         Style="{StaticResource ModernTextBox}" 
+                         x:Name="ProfileNameTextBox"/>
                 <Button Content="Save Current Session" 
                         Click="SaveProfile_Click" 
                         Margin="10,504,710,10"

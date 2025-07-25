@@ -22,6 +22,7 @@ namespace SummonerSwap
         private void SaveProfile_Click(object sender, RoutedEventArgs e)
         {
             var name = ProfileNameTextBox.Text.Trim();
+            System.Diagnostics.Debug.WriteLine($"Saving profile with name: {name}");
             if (string.IsNullOrEmpty(name))
             {
                 var messageBox = new CustomMessageBox("Please enter a valid profile name.");
