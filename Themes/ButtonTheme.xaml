@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="{x:Type Button}" x:Key="ModernButton">
-        <Setter Property="TextElement.FontFamily" Value="Fonts/#Poppins"/>
+        <Setter Property="TextElement.FontFamily" Value="Fonts/#RobotoFlex"/>
         <Setter Property="Foreground" Value="{StaticResource blue-1-brush}"/>
         <Setter Property="Background" Value="{StaticResource gray-cool-brush}"/>
         <Setter Property="Cursor" Value="Hand"/>

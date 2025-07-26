@@ -43,7 +43,7 @@ namespace SummonerSwap.Models
             RiotClientService.KillClient();
             Directory.Delete(RiotDataPath, true);
             FileManager.CopyDirectory(profilePath, RiotDataPath);
-            RiotClientService.LaunchClient();
+            RiotClientService.LaunchLeagueClient();
         }
 
         public void DeleteProfile(string name)

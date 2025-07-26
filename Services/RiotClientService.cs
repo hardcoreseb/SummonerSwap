@@ -27,7 +27,7 @@ namespace SummonerSwap.Services
             }
         }
 
-        public static void LaunchClient()
+        public static void LaunchLeagueClient()
         {
             if (File.Exists(RiotClientExe))
             {
@@ -37,7 +37,6 @@ namespace SummonerSwap.Services
             {
                 var messageBox = new CustomMessageBox("Riot Client not found at expected path.");
                 messageBox.ShowDialog();
-                MessageBox.Show("Riot Client not found at expected path.");
             }
         }
 
@@ -51,6 +50,19 @@ namespace SummonerSwap.Services
             else
             {
                 return false;
+            }
+        }
+
+        public static void LaunchRiotClient()
+        {
+            if (File.Exists(RiotClientExe))
+            {
+                Process.Start(RiotClientExe);
+            }
+            else
+            {
+                var messageBox = new CustomMessageBox("Riot Client not found at expected path.");
+                messageBox.ShowDialog();
             }
         }
     }
