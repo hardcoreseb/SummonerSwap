@@ -56,6 +56,14 @@ namespace SummonerSwap.Models
             }
         }
 
+        public void PrepareForNewProfile()
+        {
+            if (Directory.Exists(RiotDataPath))
+            {
+                Directory.Delete(RiotDataPath, true);
+            }
+        }
+
         public IEnumerable<string> ListProfiles()
         {
             if (!Directory.Exists(ProfilesPath))

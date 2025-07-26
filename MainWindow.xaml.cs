@@ -93,7 +93,9 @@ namespace SummonerSwap
 
         private void AddProfile_Click(object sender, RoutedEventArgs e)
         {
+            RiotClientService.KillLeagueClient();
             RiotClientService.KillClient();
+            _profileManager.PrepareForNewProfile();
             RiotClientService.LaunchRiotClient();
         }
     }
