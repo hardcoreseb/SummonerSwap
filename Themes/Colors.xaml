@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Blue Colors – Hextech Magic -->
+    <Color x:Key="blue-1">#CDFAFA</Color>
+    <SolidColorBrush x:Key="blue-1-brush" Color="{StaticResource blue-1}" />
+
+    <Color x:Key="blue-2">#0AC8B9</Color>
+    <SolidColorBrush x:Key="blue-2-brush" Color="{StaticResource blue-2}" />
+
+    <Color x:Key="blue-3">#0397AB</Color>
+    <SolidColorBrush x:Key="blue-3-brush" Color="{StaticResource blue-3}" />
+
+    <Color x:Key="blue-4">#005A82</Color>
+    <SolidColorBrush x:Key="blue-4-brush" Color="{StaticResource blue-4}" />
+
+    <Color x:Key="blue-5">#0A323C</Color>
+    <SolidColorBrush x:Key="blue-5-brush" Color="{StaticResource blue-5}" />
+
+    <Color x:Key="blue-6">#091428</Color>
+    <SolidColorBrush x:Key="blue-6-brush" Color="{StaticResource blue-6}" />
+
+    <Color x:Key="blue-7">#0A1428</Color>
+    <SolidColorBrush x:Key="blue-7-brush" Color="{StaticResource blue-7}" />
+
+    <!-- Gold – Hextech Metal -->
+    <Color x:Key="gold-1">#F0E6D2</Color>
+    <SolidColorBrush x:Key="gold-1-brush" Color="{StaticResource gold-1}" />
+
+    <Color x:Key="gold-2">#C8AA6E</Color>
+    <SolidColorBrush x:Key="gold-2-brush" Color="{StaticResource gold-2}" />
+
+    <Color x:Key="gold-3">#C8AA6E</Color>
+    <SolidColorBrush x:Key="gold-3-brush" Color="{StaticResource gold-3}" />
+
+    <Color x:Key="gold-4">#C89B3C</Color>
+    <SolidColorBrush x:Key="gold-4-brush" Color="{StaticResource gold-4}" />
+
+    <Color x:Key="gold-5">#785A28</Color>
+    <SolidColorBrush x:Key="gold-5-brush" Color="{StaticResource gold-5}" />
+
+    <Color x:Key="gold-6">#463714</Color>
+    <SolidColorBrush x:Key="gold-6-brush" Color="{StaticResource gold-6}" />
+
+    <Color x:Key="gold-7">#32281E</Color>
+    <SolidColorBrush x:Key="gold-7-brush" Color="{StaticResource gold-7}" />
+
+    <!-- Gray – Text & Background -->
+    <Color x:Key="gray-1">#A09B8C</Color>
+    <SolidColorBrush x:Key="gray-1-brush" Color="{StaticResource gray-1}" />
+
+    <Color x:Key="gray-1-5">#5B5A56</Color>
+    <SolidColorBrush x:Key="gray-1-5-brush" Color="{StaticResource gray-1-5}" />
+
+    <Color x:Key="gray-2">#3C3C41</Color>
+    <SolidColorBrush x:Key="gray-2-brush" Color="{StaticResource gray-2}" />
+
+    <Color x:Key="gray-3">#1E2328</Color>
+    <SolidColorBrush x:Key="gray-3-brush" Color="{StaticResource gray-3}" />
+
+    <Color x:Key="gray-cool">#1E282D</Color>
+    <SolidColorBrush x:Key="gray-cool-brush" Color="{StaticResource gray-cool}" />
+
+    <Color x:Key="hextech-black">#010A13</Color>
+    <SolidColorBrush x:Key="hextech-black-brush" Color="{StaticResource hextech-black}" />
+
+    <!-- Dark Blue Gradient - Backgrounds only -->
+    <LinearGradientBrush x:Key="gradient-dark-blue" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#091428" Offset="0.0"/>
+        <GradientStop Color="#0A1428" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <!-- Gold Gradient - Hextech metal only -->
+    <LinearGradientBrush x:Key="gradient-gold" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="#785A28" Offset="0.0"/>
+        <GradientStop Color="#C89B3C" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <!-- Blue Gradient - Magic elements (design use only) -->
+    <LinearGradientBrush x:Key="gradient-blue" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#005A82" Offset="0.0"/>
+        <GradientStop Color="#0AC8B9" Offset="1.0"/>
+    </LinearGradientBrush>
+
+
+</ResourceDictionary>

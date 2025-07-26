@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\Unsealed_Spellbook_rune.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Unsealed_Spellbook_rune.ico" />
+  </ItemGroup>
+
 </Project>

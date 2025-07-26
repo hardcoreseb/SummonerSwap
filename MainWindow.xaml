@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:SummonerSwap"
         mc:Ignorable="d"
         Title="SummonerSwap" Height="600" Width="920"
+        Icon="Images/Unsealed_Spellbook_rune.ico"
         Background="Transparent"
         WindowStyle="None"
         ResizeMode="NoResize">
-    <Border Background="#272537"
+    <Border Background="{StaticResource hextech-black-brush}"
             CornerRadius="20">
         <Grid>
             <Grid.RowDefinitions>
@@ -82,16 +83,15 @@
             </Border>
 
             <Grid Grid.Row="1">
-                <TextBlock  
-                           FontSize="36" 
+                <TextBlock FontSize="36" 
                            FontWeight="Bold" 
                            FontFamily="Fonts/#RobotoFlex"
-                           Foreground="White" 
+                           Foreground="{StaticResource gold-1-brush}" 
                            HorizontalAlignment="Center" 
                            Margin="0,50,0,475">
-                    <Run Text="Summoner"/><Run Text="Swap" Foreground="#d1363a" FontStyle="Italic"/>
+                    <Run Text="Summoner"/><Run Text="Swap" Foreground="{StaticResource gold-4-brush}" FontStyle="Italic"/>
                 </TextBlock>
-                <TextBox Margin="350,175,350,350" 
+                <TextBox Margin="350,395,350,140" 
                          Style="{StaticResource ModernTextBox}" 
                          x:Name="ProfileNameTextBox"/>
                 <Button Content="Save Current Session" 
@@ -100,7 +100,7 @@
                         Width="160"
                         Style="{StaticResource ModernButton}"/>
                 <ListBox x:Name="ProfileListBox" 
-                         Margin="200,259,200,150"/>
+                         Margin="200,160,200,250"/>
                 <Button Content="Load Selected Profile" 
                         Click="LoadProfile_Click" 
                         Margin="734,504,10,10"
@@ -113,7 +113,7 @@
                 <Button Content="Delete Profile" 
                         Click="DeleteProfile_Click" 
                         HorizontalAlignment="Center" 
-                        Margin="0,522,0,0" 
+                        Margin="0,517,0,0" 
                         VerticalAlignment="Top" 
                         Width="120"
                         Style="{StaticResource ModernButton}"/>
