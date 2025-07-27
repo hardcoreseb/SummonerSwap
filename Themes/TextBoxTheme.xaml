@@ -15,7 +15,9 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}"
                             CornerRadius="10"
-                            SnapsToDevicePixels="True">
+                            SnapsToDevicePixels="True"
+                            BorderThickness="2"
+                            BorderBrush="{StaticResource gold-4-brush}">
                         <Grid>
                             <!-- Needed for Input Binding -->
                             <ScrollViewer x:Name="PART_ContentHost"

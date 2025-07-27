@@ -10,10 +10,14 @@
 
   <ItemGroup>
     <None Remove="Images\Unsealed_Spellbook_rune.ico" />
+    <None Remove="Images\Unsealed_Spellbook_rune.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\Unsealed_Spellbook_rune.ico" />
+    <Resource Include="Images\Unsealed_Spellbook_rune.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
