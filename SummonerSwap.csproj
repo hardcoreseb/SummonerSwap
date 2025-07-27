@@ -9,11 +9,55 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Summoner_Spells_Current_HD\Barrier_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Clarity_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Cleanse_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\default.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Exhaust_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Flash_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Ghost_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Heal_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Ignite_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Smite_HD.png" />
+    <None Remove="Images\Summoner_Spells_Current_HD\Teleport_HD.png" />
     <None Remove="Images\Unsealed_Spellbook_rune.ico" />
     <None Remove="Images\Unsealed_Spellbook_rune.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Summoner_Spells_Current_HD\Barrier_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Clarity_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Cleanse_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\default.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Exhaust_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Flash_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Ghost_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Heal_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Ignite_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Smite_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Summoner_Spells_Current_HD\Teleport_HD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\Unsealed_Spellbook_rune.ico" />
     <Resource Include="Images\Unsealed_Spellbook_rune.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

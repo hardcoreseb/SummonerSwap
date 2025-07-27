@@ -33,6 +33,27 @@ namespace SummonerSwap.Models
 
             FileManager.CopyDirectory(RiotDataPath, profilePath);
             System.Diagnostics.Debug.WriteLine($"Profile saved to {profilePath}");
+
+            var imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "Summoner_Spells_Current_HD");
+            System.Diagnostics.Debug.WriteLine($"Looking for images in: {imageFolder}");
+            var images = Directory.GetFiles(imageFolder, "*.png");
+            if (images.Length == 0)
+            {
+                MessageBox.Show("No .png images found in: " + imageFolder);
+                return;
+            }
+            var random = new Random();
+
+            var selectedImage = Path.GetFileName(images[random.Next(images.Length)]);
+
+            var metaData = new ProfileMetaData
+            {
+                Image = selectedImage,
+                Created = DateTime.Now
+            };
+
+            var metaDataPath = Path.Combine(profilePath, "metadata.json");
+            File.WriteAllText(metaDataPath, System.Text.Json.JsonSerializer.Serialize(metaData));
         }
 
         public void LoadProfile(string name)
@@ -66,14 +87,33 @@ namespace SummonerSwap.Models
             }
         }
 
-        public IEnumerable<string> ListProfiles()
+        public IEnumerable<(string Name, ProfileMetaData MetaData)> ListProfiles()
         {
             if (!Directory.Exists(ProfilesPath))
                 yield break;
 
             foreach (var dir in Directory.GetDirectories(ProfilesPath))
             {
-                yield return Path.GetFileName(dir);
+                string name = Path.GetFileName(dir);
+                string metaDataPath = Path.Combine(dir, "metadata.json");
+
+                ProfileMetaData metaData = new ProfileMetaData();
+
+                if (File.Exists(metaDataPath))
+                {
+                    try
+                    {
+                        var metaDataJson = File.ReadAllText(metaDataPath);
+                        metaData = System.Text.Json.JsonSerializer.Deserialize<ProfileMetaData>(metaDataJson);
+                    }
+                    catch
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Failed to read metadata for profile: {name}");
+                        // If metadata fails, we can still use the default image
+                    }
+                }
+
+                yield return (name, metaData);
             }
         }
     }

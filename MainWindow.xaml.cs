@@ -36,9 +36,10 @@ namespace SummonerSwap
 
         private void LoadProfile_Click(object sender, RoutedEventArgs e)
         {
-            if (ProfileListBox.SelectedItem == null)
+            if (ProfileListBox.SelectedItem is not ProfileViewModel selectedProfile)
             {
-                MessageBox.Show("Select a profile to load.");
+                var messageBox = new CustomMessageBox("Please select a profile to load.");
+                messageBox.ShowDialog();          
                 return;
             }
 
@@ -47,29 +48,40 @@ namespace SummonerSwap
                 RiotClientService.KillLeagueClient();
             }
 
-
-            string profile = ProfileListBox.SelectedItem.ToString();
-            _profileManager.LoadProfile(profile);
+            _profileManager.LoadProfile(selectedProfile.Name);
         }
 
         public void DeleteProfile_Click(object sender, RoutedEventArgs e)
         {
-            if (ProfileListBox.SelectedItem == null)
+            if (ProfileListBox.SelectedItem is not ProfileViewModel selectedProfile)
             {
-                MessageBox.Show("Select a profile to delete.");
+                var messageBox = new CustomMessageBox("Please select a profile to delete.");
+                messageBox.ShowDialog();
                 return;
             }
 
-            _profileManager.DeleteProfile(ProfileListBox.SelectedItem.ToString());
+            _profileManager.DeleteProfile(selectedProfile.Name);
+            System.Diagnostics.Debug.WriteLine($"Deleted profile: {selectedProfile.Name}");
             RefreshProfileList();
         }
 
         private void RefreshProfileList()
         {
             ProfileListBox.Items.Clear();
-            foreach (var profile in _profileManager.ListProfiles())
+
+            string imageFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "Summoner_Spells_Current_HD");
+
+            foreach (var (name, meta) in _profileManager.ListProfiles())
             {
-                ProfileListBox.Items.Add(profile);
+                string imagePath = Path.Combine(imageFolder, meta.Image ?? "default.png");
+
+                var profileViewModel = new ProfileViewModel
+                {
+                    Name = name,
+                    ImagePath = File.Exists(imagePath) ? imagePath : Path.Combine(imageFolder, "default.png")
+                };
+
+                ProfileListBox.Items.Add(profileViewModel);
             }
         }
 
