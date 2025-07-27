@@ -25,7 +25,7 @@ namespace SummonerSwap
             System.Diagnostics.Debug.WriteLine($"Saving profile with name: {name}");
             if (string.IsNullOrEmpty(name))
             {
-                var messageBox = new CustomMessageBox("Please enter a valid profile name.");
+                var messageBox = new CustomMessageBox("Please enter a valid profile name.", "Missing/Wrong Profile Name");
                 messageBox.ShowDialog();
                 return;
             }
@@ -38,7 +38,7 @@ namespace SummonerSwap
         {
             if (ProfileListBox.SelectedItem is not ProfileViewModel selectedProfile)
             {
-                var messageBox = new CustomMessageBox("Please select a profile to load.");
+                var messageBox = new CustomMessageBox("Please select a profile to load.", "Profile Selection");
                 messageBox.ShowDialog();          
                 return;
             }
@@ -55,7 +55,7 @@ namespace SummonerSwap
         {
             if (ProfileListBox.SelectedItem is not ProfileViewModel selectedProfile)
             {
-                var messageBox = new CustomMessageBox("Please select a profile to delete.");
+                var messageBox = new CustomMessageBox("Please select a profile to delete.", "Profile Selection");
                 messageBox.ShowDialog();
                 return;
             }

@@ -11,7 +11,7 @@
         WindowStyle="None"
         ResizeMode="NoResize">
     <Border Background="{StaticResource hextech-black-brush}"
-            CornerRadius="20">
+            CornerRadius="0">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
@@ -24,7 +24,7 @@
 
                 <Grid HorizontalAlignment="Stretch">
                     <Label Content="SummonerSwap"
-                           Foreground="Gray"
+                           Foreground="{StaticResource gray-1-brush}"
                            FontWeight="SemiBold"/>
 
                     <StackPanel HorizontalAlignment="Right"
@@ -44,7 +44,7 @@
                                         </Canvas.RenderTransform>
                                         <Canvas.Resources/>
 
-                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2" Fill="Gray">
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2" Fill="{StaticResource gray-1-brush}">
                                             <Path.Data>
                                                 <PathGeometry Figures="M240-120v-80h480v80H240Z" FillRule="NonZero"/>
                                             </Path.Data>
@@ -68,7 +68,7 @@
                                         </Canvas.RenderTransform>
                                         <Canvas.Resources/>
 
-                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="ClosePath" Fill="Gray">
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="ClosePath" Fill="{StaticResource gray-1-brush}">
                                             <Path.Data>
                                                 <PathGeometry Figures="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" FillRule="NonZero"/>
                                             </Path.Data>

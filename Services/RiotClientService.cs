@@ -35,7 +35,7 @@ namespace SummonerSwap.Services
             }
             else
             {
-                var messageBox = new CustomMessageBox("Riot Client not found at expected path.");
+                var messageBox = new CustomMessageBox("Riot Client not found at expected path.", "Riot Client Path Error");
                 messageBox.ShowDialog();
             }
         }
@@ -61,7 +61,7 @@ namespace SummonerSwap.Services
             }
             else
             {
-                var messageBox = new CustomMessageBox("Riot Client not found at expected path.");
+                var messageBox = new CustomMessageBox("Riot Client not found at expected path.", "Riot Client Path Error");
                 messageBox.ShowDialog();
             }
         }

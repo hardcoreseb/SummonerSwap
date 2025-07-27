@@ -22,7 +22,7 @@ namespace SummonerSwap.Models
         {
             if (!RiotClientService.CheckLeagueClientRunning())
             {
-                var messageBox = new CustomMessageBox("Please be logged into League of Legends to save an account!");
+                var messageBox = new CustomMessageBox("Please be logged into League of Legends to save an account.", "Save Profile Error");
                 messageBox.ShowDialog();
                 return;
             }
@@ -74,7 +74,7 @@ namespace SummonerSwap.Models
             if (Directory.Exists(profilePath))
             {
                 Directory.Delete(profilePath, true);
-                var messageBox = new CustomMessageBox($"Profile '{name}' deleted successfully.");
+                var messageBox = new CustomMessageBox($"Profile '{name}' deleted successfully.", "Deletion success!");
                 messageBox.ShowDialog();                
             }
         }

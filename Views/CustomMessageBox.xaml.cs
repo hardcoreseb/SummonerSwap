@@ -19,10 +19,12 @@ namespace SummonerSwap.Views
     /// </summary>
     public partial class CustomMessageBox : Window
     {
-        public CustomMessageBox(string message)
+        public CustomMessageBox(string message, string title)
         {
             InitializeComponent();
             MessageText.Text = message;
+            Title = title;
+            TitleLabel.Content = title;
         }
 
         private void Ok_Click(object sender, RoutedEventArgs e)
