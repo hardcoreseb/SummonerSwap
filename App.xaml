@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/Themes/TextBoxTheme.xaml"/>
                 <ResourceDictionary Source="/Themes/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="/Themes/ListBoxTheme.xaml"/>
+                <ResourceDictionary Source="/Themes/CheckBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

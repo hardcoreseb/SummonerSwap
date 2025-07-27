@@ -141,8 +141,11 @@
                 <CheckBox x:Name="MultipleClientCheckBox" 
                           Content="Multiple Clients" 
                           HorizontalAlignment="Left" 
-                          Margin="734,492,0,0" 
-                          VerticalAlignment="Top"/>
+                          Margin="734,485,0,0" 
+                          VerticalAlignment="Top"                      
+                          Style="{StaticResource ModernCheckBox}"
+                          FontSize="14"
+                          FontWeight="Bold"/>
                 <Button Content="Delete Profile" 
                         Click="DeleteProfile_Click" 
                         HorizontalAlignment="Left" 
