@@ -21,8 +21,10 @@ namespace SummonerSwap
 
         private void SaveProfile_Click(object sender, RoutedEventArgs e)
         {
+            if (!CheckRiotClientPath()) return;
+
             var name = ProfileNameTextBox.Text.Trim();
-            System.Diagnostics.Debug.WriteLine($"Saving profile with name: {name}");
+            
             if (string.IsNullOrEmpty(name))
             {
                 var messageBox = new CustomMessageBox("Please enter a valid profile name.", "Missing/Wrong Profile Name");
@@ -36,6 +38,8 @@ namespace SummonerSwap
 
         private void LoadProfile_Click(object sender, RoutedEventArgs e)
         {
+            if (!CheckRiotClientPath()) return;
+
             if (ProfileListBox.SelectedItem is not ProfileViewModel selectedProfile)
             {
                 var messageBox = new CustomMessageBox("Please select a profile to load.", "Profile Selection");
@@ -109,6 +113,24 @@ namespace SummonerSwap
             RiotClientService.KillClient();
             _profileManager.PrepareForNewProfile();
             RiotClientService.LaunchRiotClient();
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            var settingsWindow = new SettingsWindow();
+            settingsWindow.ShowDialog();
+        }
+
+        private bool CheckRiotClientPath()
+        {
+            if (!RiotClientService.IsValidRiotClientPath())
+            {
+                var messageBox = new CustomMessageBox("The Riot Client executable path is invalid or not found.\nPlease set the correct path in Settings.", 
+                    "Invalid Riot Client Path");
+                messageBox.ShowDialog();
+                return false;
+            }
+            return true;
         }
     }
 }

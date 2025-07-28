@@ -1,13 +1,80 @@
-﻿using System.Diagnostics;
+﻿using SummonerSwap.Views;
+using System.Diagnostics;
 using System.IO;
+using System.Text.Json;
 using System.Windows;
-using SummonerSwap.Views;
 
 namespace SummonerSwap.Services
 {
+    public class AppConfig
+    {
+        public string RiotClientPath { get; set; } = @"C:\Riot Games\Riot Client\RiotClientServices.exe";
+    }
+
     public static class RiotClientService
     {
-        private static readonly string RiotClientExe = @"C:\Riot Games\Riot Client\RiotClientServices.exe";
+        private static readonly string ConfigFolder = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+        "SummonerSwap"
+        );
+        private static readonly string ConfigPath = Path.Combine(ConfigFolder, "config.json");
+
+        private static AppConfig config;
+
+        static RiotClientService()
+        {
+            config = LoadConfig();
+        }
+        public static string RiotClientExePath
+        {
+            get => config.RiotClientPath;
+            set
+            {
+                config.RiotClientPath = value;
+                SaveConfig();
+            }
+        }
+
+        private static AppConfig LoadConfig()
+        {
+            {
+                if (!Directory.Exists(ConfigFolder))
+                    Directory.CreateDirectory(ConfigFolder);
+
+                if (!File.Exists(ConfigPath))
+                {
+                    SaveConfig(); // Save defaults on first run
+                    return new AppConfig();
+                }
+
+                var json = File.ReadAllText(ConfigPath);
+                try
+                {
+                    return JsonSerializer.Deserialize<AppConfig>(json) ?? new AppConfig();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Error deserializing config: {ex.Message}");
+                    return new AppConfig();
+                }
+            }
+        }
+
+        private static void SaveConfig()
+        {
+            var json = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
+
+            if (!Directory.Exists(ConfigFolder))
+                Directory.CreateDirectory(ConfigFolder);
+
+            File.WriteAllText(ConfigPath, json);
+        }
+
+        public static bool IsValidRiotClientPath()
+        {
+            return File.Exists(RiotClientExePath) &&
+                RiotClientExePath.EndsWith("RiotClientServices.exe", StringComparison.OrdinalIgnoreCase);
+        }
 
         public static void KillClient()
         {
@@ -29,9 +96,9 @@ namespace SummonerSwap.Services
 
         public static void LaunchLeagueClient()
         {
-            if (File.Exists(RiotClientExe))
+            if (File.Exists(RiotClientExePath))
             {
-                Process.Start(RiotClientExe, "--launch-product=league_of_legends --launch-patchline=live --allow-multiple-clients");
+                Process.Start(RiotClientExePath, "--launch-product=league_of_legends --launch-patchline=live --allow-multiple-clients");
             }
             else
             {
@@ -55,9 +122,9 @@ namespace SummonerSwap.Services
 
         public static void LaunchRiotClient()
         {
-            if (File.Exists(RiotClientExe))
+            if (File.Exists(RiotClientExePath))
             {
-                Process.Start(RiotClientExe);
+                Process.Start(RiotClientExePath);
             }
             else
             {

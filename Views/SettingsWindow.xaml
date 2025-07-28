@@ -1,0 +1,104 @@
+﻿<Window x:Class="SummonerSwap.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SummonerSwap.Views"
+        mc:Ignorable="d"
+        Title="SettingsWindow" Height="450" Width="800"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Border Background="{StaticResource hextech-black-brush}"
+            CornerRadius="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Background="#252525"
+                    MouseDown="Border_MouseDown">
+                <Grid HorizontalAlignment="Stretch">
+                    <Label x:Name="TitleLabel"
+                            Content="SummonerSwap"
+                            Foreground="{StaticResource gray-1-brush}"
+                            FontWeight="SemiBold"/>
+
+                    <StackPanel HorizontalAlignment="Right"
+                                Orientation="Horizontal">
+
+                        <Button Width="20" Height="20"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Click="ButtonMinimize_Click">
+                            <Button.Content>
+                                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Name="MinimizeIcon" Width="960" Height="960">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="650"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2" Fill="{StaticResource gray-1-brush}">
+                                            <Path.Data>
+                                                <PathGeometry Figures="M240-120v-80h480v80H240Z" FillRule="NonZero"/>
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button.Content>
+                        </Button>
+
+                        <Button Width="20" Height="20"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Foreground="Gray"
+                                FontWeight="Bold"
+                                Click="CloseButton_Click">
+                            <Button.Content>
+                                <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+                                    <Canvas Name="CloseIcon" Width="960" Height="960">
+                                        <Canvas.RenderTransform>
+                                            <TranslateTransform X="0" Y="960"/>
+                                        </Canvas.RenderTransform>
+                                        <Canvas.Resources/>
+
+                                        <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="ClosePath" Fill="{StaticResource gray-1-brush}">
+                                            <Path.Data>
+                                                <PathGeometry Figures="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" FillRule="NonZero"/>
+                                            </Path.Data>
+                                        </Path>
+                                    </Canvas>
+                                </Viewbox>
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <TextBlock Text="Riot Client Executable Path:" 
+                           Margin="204,128,386,279" 
+                           Foreground="{StaticResource gold-1-brush}"
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           FontFamily="Fonts/#RobotoFlex"/>
+                <TextBox x:Name="RiotPathTextBox" 
+                         Margin="204,152,204,233"
+                         IsReadOnly="True"
+                         Style="{StaticResource RiotClientPathTextBox}"/>
+                <Button Content="Browse..." 
+                        Click="Browse_Click" 
+                        Margin="47,154,623,236"
+                        Style="{StaticResource ModernButton}"/>
+                <Button Content="Save" 
+                        Click="Save_Click" 
+                        Margin="648,154,58,236"
+                        Style="{StaticResource ModernButton}"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
