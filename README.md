@@ -48,4 +48,40 @@ It allows you to create multiple profiles, offering a streamlined experience for
 4. Run the `SummonerSwap.exe`.
 
 ---
+# 🧪 Development & Building
 
+### Build from Source
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hardcoreseb/SummonerSwap.git
+
+Open the .sln file in Visual Studio 2022+.
+
+Build the project with the target framework .NET 8.0.
+
+Run the app using F5 or Ctrl + F5.
+
+## 🚧 Planned Features
+🔁 Auto-update system
+
+🖼️ Changeable Summoner Spell images
+
+🧹 Improved UI/UX polish
+
+## 💬 Feedback & Issues
+If you encounter bugs or have feature requests, please open an issue.
+All feedback is greatly appreciated!
+
+## 📝 License
+This project is licensed under the MIT License.
+
+## 🙌 Credits
+Developed with ❤️ using WPF (.NET 8.0)
+
+Icons and images are property of Riot Games (used under fair use for personal tools)
+
+---
+
+Let me know if you'd like to include installation screenshots, GIFs, or add badges (e.g., `.NET`, `license`, etc.)!
