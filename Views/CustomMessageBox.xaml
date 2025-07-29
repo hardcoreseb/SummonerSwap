@@ -10,14 +10,16 @@
         WindowStyle="None"
         ResizeMode="NoResize">
     <Border Background="{StaticResource hextech-black-brush}"
-            CornerRadius="0">
+            CornerRadius="0"
+            BorderThickness="1,0,1,1"
+            BorderBrush="{StaticResource gray-3-brush}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Border Grid.Row="0"
-                    Background="#252525"
+                    Background="{StaticResource gray-3-brush}"
                     MouseDown="Border_MouseDown">
 
                 <Grid HorizontalAlignment="Stretch">

@@ -10,14 +10,16 @@
         WindowStyle="None"
         ResizeMode="NoResize">
     <Border Background="{StaticResource hextech-black-brush}"
-            CornerRadius="0">
+            CornerRadius="0"
+            BorderThickness="1,0,1,1"
+            BorderBrush="{StaticResource gray-3-brush}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="25" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Border Grid.Row="0"
-                    Background="#252525"
+                    Background="{StaticResource gray-3-brush}"
                     MouseDown="Border_MouseDown">
                 <Grid HorizontalAlignment="Stretch">
                     <Label x:Name="TitleLabel"
@@ -81,22 +83,22 @@
 
             <Grid Grid.Row="1">
                 <TextBlock Text="Riot Client Executable Path:" 
-                           Margin="204,128,386,279" 
+                           Margin="221,131,369,276" 
                            Foreground="{StaticResource gold-1-brush}"
                            FontSize="16"
                            FontWeight="SemiBold"
                            FontFamily="Fonts/#RobotoFlex"/>
                 <TextBox x:Name="RiotPathTextBox" 
-                         Margin="204,152,204,233"
+                         Margin="221,155,187,229"
                          IsReadOnly="True"
                          Style="{StaticResource RiotClientPathTextBox}"/>
                 <Button Content="Browse..." 
                         Click="Browse_Click" 
-                        Margin="47,154,623,236"
+                        Margin="43,155,627,231"
                         Style="{StaticResource ModernButton}"/>
                 <Button Content="Save" 
                         Click="Save_Click" 
-                        Margin="648,154,58,236"
+                        Margin="656,155,50,231"
                         Style="{StaticResource ModernButton}"/>
             </Grid>
         </Grid>

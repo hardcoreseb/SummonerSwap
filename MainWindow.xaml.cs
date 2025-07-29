@@ -5,6 +5,7 @@ using SummonerSwap.Models;
 using System.Windows.Controls;
 using SummonerSwap.Views;
 using System.Windows.Input;
+using SummonerSwap.Helpers;
 
 namespace SummonerSwap
 {
@@ -17,6 +18,12 @@ namespace SummonerSwap
             InitializeComponent();
             _profileManager = new ProfileManager();
             RefreshProfileList();
+
+            if (ConfigManager._config.ShowHelpOnStartup)
+            {
+                var helpWindow = new HelpWindow();
+                helpWindow.ShowDialog();                
+            }
         }
 
         private void SaveProfile_Click(object sender, RoutedEventArgs e)
@@ -131,6 +138,12 @@ namespace SummonerSwap
                 return false;
             }
             return true;
+        }
+
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            var helpWindow = new HelpWindow();
+            helpWindow.ShowDialog();
         }
     }
 }

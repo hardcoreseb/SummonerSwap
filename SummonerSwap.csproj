@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Checkmark_Login_Requirement.png" />
     <None Remove="Images\Summoner_Spells_Current_HD\Barrier_HD.png" />
     <None Remove="Images\Summoner_Spells_Current_HD\Clarity_HD.png" />
     <None Remove="Images\Summoner_Spells_Current_HD\Cleanse_HD.png" />
@@ -58,25 +59,13 @@
     <Content Include="Images\Summoner_Spells_Current_HD\Teleport_HD.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Images\Checkmark_Login_Requirement.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Unsealed_Spellbook_rune.ico" />
     <Resource Include="Images\Unsealed_Spellbook_rune.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using SummonerSwap.Helpers;
 
 namespace SummonerSwap
 {
@@ -15,8 +16,8 @@ namespace SummonerSwap
             base.OnStartup(e);
 
             // Force early config load
-            string configPath = RiotClientService.RiotClientExePath;
-            System.Diagnostics.Debug.WriteLine($"[App.xaml.cs] Loaded RiotClientServices.exe path: {configPath}");
+            var config = ConfigManager.LoadConfig;
+            System.Diagnostics.Debug.WriteLine($"[App.xaml.cs] Loaded RiotClientServices.exe path: {config}");
         }
     }
 
