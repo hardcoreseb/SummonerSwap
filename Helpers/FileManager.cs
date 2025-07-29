@@ -10,7 +10,15 @@ namespace SummonerSwap.Helpers
                 Directory.CreateDirectory(dirPath.Replace(source, destination));
 
             foreach (string filePath in Directory.GetFiles(source, "*.*", SearchOption.AllDirectories))
-                File.Copy(filePath, filePath.Replace(source, destination), true);
+            {
+                string targetFilePath = filePath.Replace(source, destination);
+                string? targetDirectory = Path.GetDirectoryName(targetFilePath);
+
+                if (!Directory.Exists(targetDirectory))
+                    Directory.CreateDirectory(targetDirectory);
+
+                File.Copy(filePath, targetFilePath, true);
+            }
         }
     }
 }

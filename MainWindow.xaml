@@ -176,6 +176,15 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical" Margin="5">
+                                <!--<StackPanel.ContextMenu>
+                                    <ContextMenu>
+                                        --><!--<MenuItem Header="Rename Profile"
+                                                  Click="RenameProfile_Click"/>-->
+                                        <!--<MenuItem Header="Change Image"
+                                                  Click="ChangeProfilePicture_Click"/>--><!--
+                                    </ContextMenu>
+                                </StackPanel.ContextMenu>-->
+                                
                                 <Image Source="{Binding ImagePath}"
                                        Width="64" Height="64"
                                        Stretch="UniformToFill"
