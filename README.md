@@ -35,12 +35,12 @@ It allows you to create multiple profiles, offering a streamlined experience for
 
 ### 📦 Download & Install
 
-1. Head to the [Releases](https://github.com/hardcoreseb/SummonerSwap/releases) page.
+<!--1. Head to the [Releases](https://github.com/hardcoreseb/SummonerSwap/releases) page.
 2. Download the latest `SummonerSwap_Setup.exe`.
 3. Run the installer.
 4. Follow the installation instructions (admin rights required for installation into `C:\Program Files`).
 
-#### OR
+#### OR -->
 
 1. Head to the [Releases](https://github.com/hardcoreseb/SummonerSwap/releases) page.
 2. Download the latest `SummonerSwap.7z`.
