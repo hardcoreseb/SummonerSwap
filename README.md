@@ -81,7 +81,3 @@ This project is licensed under the MIT License.
 Developed with ❤️ using WPF (.NET 8.0)
 
 Icons and images are property of Riot Games (used under fair use for personal tools)
-
----
-
-Let me know if you'd like to include installation screenshots, GIFs, or add badges (e.g., `.NET`, `license`, etc.)!
